@@ -25,28 +25,29 @@ class Shop {
         item.name !== sulfuras
       ) {
         item.quality -= 1;
-      } else {
-        if (item.quality < 50) {
-          item.quality += 1;
-          if (item.name === backStagePass) {
-            if (item.sellIn < 11 && item.quality < 50) {
-              item.quality += 1;
-            }
-            if (item.sellIn < 6 && item.quality < 50) {
-              item.quality += 1;
-            }
+      } else if (item.quality < 50) {
+        item.quality += 1;
+        if (item.name === backStagePass) {
+          if (item.sellIn < 11) {
+            item.quality += 1;
+          }
+          if (item.sellIn < 6) {
+            item.quality += 1;
           }
         }
       }
+
       if (item.name !== sulfuras) {
         item.sellIn -= 1;
       }
       if (item.sellIn < 0) {
         if (item.name !== aged) {
-          if (item.name !== backStagePass) {
-            if (item.quality > 0 && item.name !== sulfuras) {
-              item.quality -= 1;
-            }
+          if (
+            item.name !== backStagePass &&
+            item.quality > 0 &&
+            item.name !== sulfuras
+          ) {
+            item.quality -= 1;
           } else {
             item.quality -= item.quality;
           }

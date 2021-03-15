@@ -1,6 +1,6 @@
 const { Shop, Item } = require("../src/gilded_rose");
 function getItems() {
-  const items = [
+  return [
     new Item("+5 Dexterity Vest", 10, 20),
     new Item("Aged Brie", 2, 0),
     new Item("Elixir of the Mongoose", 5, 7),
@@ -13,7 +13,6 @@ function getItems() {
     // This Conjured item does not work properly yet
     new Item("Conjured Mana Cake", 3, 6),
   ];
-  return items;
 }
 
 describe("Gilded Rose", function () {
