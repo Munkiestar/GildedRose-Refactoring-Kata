@@ -55,7 +55,7 @@ describe("Gilded Rose", function () {
     const gildedRose = new Shop(items);
     gildedRose.updateQuality();
     gildedRose.updateQuality();
-    expect(agedBrie.quality).toBe(2);
+    expect(agedBrie.quality).toBe(4);
   });
   it("should increase quality for backstage passes", function () {
     const items = getItems();
@@ -126,6 +126,6 @@ describe("Gilded Rose", function () {
     const gildedRose = new Shop(items);
     gildedRose.updateQuality();
     gildedRose.updateQuality();
-    expect(conjuredItem.quality).toBe(2);
+    expect(conjuredItem.quality).toBe(4);
   });
 });
